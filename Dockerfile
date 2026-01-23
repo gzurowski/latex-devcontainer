@@ -1,6 +1,7 @@
 ARG VARIANT="noble"
 FROM mcr.microsoft.com/devcontainers/base:${VARIANT}
 
+ARG USERNAME=vscode
 ARG TEXLIVE_SCHEME="medium"
 RUN apt-get update && \
     DEBIAN_FRONTEND=noninteractive apt-get -y install --no-install-recommends \
@@ -13,9 +14,10 @@ RUN apt-get update && \
     && export TEXLIVE_INSTALL_NO_CONTEXT_CACHE=1 \
     && export TEXLIVE_INSTALL_NO_WELCOME=1 \
     && ./install-tl \
-        --no-interaction --scheme=${TEXLIVE_SCHEME} \
-        --texdir /usr/local/texlive \
-        --no-doc-install --no-src-install \
+    --no-interaction --scheme=${TEXLIVE_SCHEME} \
+    --texdir /usr/local/texlive \
+    --no-doc-install --no-src-install \
+    && chown -R ${USERNAME}:${USERNAME} /usr/local/texlive \
     && rm -rf /tmp/texlive
 
 # Include both architectures in the path:
