@@ -1,30 +1,37 @@
 ARG VARIANT="noble"
 FROM mcr.microsoft.com/devcontainers/base:${VARIANT}
 
-# Base packages
-RUN apt-get update && DEBIAN_FRONTEND=noninteractive \
-    && apt-get -y install --no-install-recommends \
-    ca-certificates \
-    curl \
-    make \
-    && apt-get clean -y && rm -rf /var/lib/apt/lists/*
+ARG TEXLIVE_SCHEME="medium"
+RUN apt-get update && \
+    DEBIAN_FRONTEND=noninteractive apt-get -y install --no-install-recommends \
+    perl wget \
+    && apt-get clean -y && rm -rf /var/lib/apt/lists/* \
+    && mkdir -p /tmp/texlive \
+    && cd /tmp/texlive \
+    && wget -q https://mirror.ctan.org/systems/texlive/tlnet/install-tl-unx.tar.gz \
+    && tar -xzf install-tl-unx.tar.gz --strip-components=1 \
+    && export TEXLIVE_INSTALL_NO_CONTEXT_CACHE=1 \
+    && export TEXLIVE_INSTALL_NO_WELCOME=1 \
+    && ./install-tl \
+        --no-interaction --scheme=${TEXLIVE_SCHEME} \
+        --texdir /usr/local/texlive \
+        --no-doc-install --no-src-install \
+    && rm -rf /tmp/texlive
 
-# TexLive packages
-RUN apt-get update && DEBIAN_FRONTEND=noninteractive \
-    && apt-get -y install --no-install-recommends \
-    texlive-latex-base \
-    texlive-latex-extra \
-    texlive-science \
-    texlive-fonts-recommended \
-    texlive-bibtex-extra \
-    lmodern \
-    && apt-get clean -y && rm -rf /var/lib/apt/lists/*
+# Include both architectures in the path:
+ENV PATH="/usr/local/texlive/bin/x86_64-linux:/usr/local/texlive/bin/aarch64-linux:${PATH}"
 
-# LaTeX utilities
-RUN apt-get update && DEBIAN_FRONTEND=noninteractive \
-    && apt-get -y install --no-install-recommends \
+# Additional TeX Live packages
+RUN tlmgr install \
     biber \
     chktex \
-    latexmk \
-    python3-pygments \
-    && apt-get clean -y && rm -rf /var/lib/apt/lists/*
+    latexindent \
+    latexmk
+
+# Latexindent dependencies
+RUN apt-get update && \
+    DEBIAN_FRONTEND=noninteractive apt-get -y install --no-install-recommends \
+    cpanminus \
+    && apt-get clean -y && rm -rf /var/lib/apt/lists/* \
+    && cpanm File::HomeDir YAML::Tiny
+
