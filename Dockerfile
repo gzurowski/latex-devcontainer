@@ -2,7 +2,7 @@ ARG VARIANT="noble"
 FROM mcr.microsoft.com/devcontainers/base:${VARIANT}
 
 ARG USERNAME=vscode
-ARG TEXLIVE_SCHEME="medium"
+ARG TEXLIVE_SCHEME="basic"
 RUN apt-get update && \
     DEBIAN_FRONTEND=noninteractive apt-get -y install --no-install-recommends \
     perl wget \
