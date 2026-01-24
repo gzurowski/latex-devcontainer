@@ -70,3 +70,19 @@ docker run --rm -v $(pwd):/workspace -w /workspace gzurowski/latex-devcontainer:
 
 This mounts your current directory into the container, builds the document, and writes the output PDF back to the host.
 
+## Additional Packages
+
+Use the [TeX Live package manager](https://www.tug.org/texlive/tlmgr.html) to install packages not included in your chosen scheme:
+
+```bash
+tlmgr install <PACKAGE_NAME>
+```
+
+For a persistent installation, extend the Dockerfile or add to `postCreateCommand` in your `devcontainer.json` file:
+
+```json
+{
+  "postCreateCommand": "tlmgr install <PACKAGE_NAME>"
+}
+```
+
