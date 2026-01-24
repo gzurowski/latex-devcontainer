@@ -60,3 +60,13 @@ Click the button below to launch a fully configured LaTeX environment in your br
 
 [![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/gzurowski/latex-devcontainer)
 
+### Option 3: Docker
+
+You can also use the container directly (without Visual Studio Code) to build your LaTeX projects:
+
+```bash
+docker run --rm -v $(pwd):/workspace -w /workspace gzurowski/latex-devcontainer:full latexmk -pdf document.tex
+```
+
+This mounts your current directory into the container, builds the document, and writes the output PDF back to the host.
+
