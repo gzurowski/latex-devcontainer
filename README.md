@@ -19,3 +19,7 @@ A complete LaTeX environment with zero configuration. No installation, no subscr
 - **Linting** with [ChkTeX](https://www.nongnu.org/chktex/) for caching errors as you type.
 - **Formatting** with [latexindent](https://github.com/cmhughes/latexindent.pl) for consistent style of save.
 - **Multi-architecture** images with support for AMD64 and ARM64 (Apple Silicon).
+
+## Issues
+
+If you encounter any problems or have suggestions, please [open an issue](https://github.com/gzurowski/latex-devcontainer/issues).
