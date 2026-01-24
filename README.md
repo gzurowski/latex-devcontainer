@@ -94,9 +94,8 @@ The following container images are available:
 
 | Tag      | Description                                                                                                                                   | Size (compressed) |
 | -------- | --------------------------------------------------------------------------------------------------------------------------------------------- | ----------------- |
-| `basic`  | [Basic scheme](https://svn.tug.org:8369/texlive/trunk/Master/tlpkg/tlpsrc/scheme-basic.tlpsrc?view=markup)                                    | ~350 MB           |
+| `basic`  | [Basic scheme](https://svn.tug.org:8369/texlive/trunk/Master/tlpkg/tlpsrc/scheme-basic.tlpsrc?view=markup) is a minimal LaTeX installation.   | ~350 MB           |
 | `medium` | [Medium scheme](https://svn.tug.org:8369/texlive/trunk/Master/tlpkg/tlpsrc/scheme-medium.tlpsrc?view=markup) with more packages and languages | ~700 GB           |
 | `full`   | [Full scheme](https://svn.tug.org:8369/texlive/trunk/Master/tlpkg/tlpsrc/scheme-full.tlpsrc?view=markup) with everything                      | ~2.4 GB           |
 
 If you install a scheme smaller than `full`, you can still add any missing packages later with [`tlmgr`](#additional-packages).
-
