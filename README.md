@@ -2,6 +2,7 @@
 
 [![Docker Hub](https://img.shields.io/docker/v/gzurowski/latex-devcontainer/latest?label=Docker%20Hub)](https://hub.docker.com/r/gzurowski/latex-devcontainer)
 [![Build](https://img.shields.io/github/actions/workflow/status/gzurowski/latex-devcontainer/build.yml?branch=main)](https://github.com/gzurowski/latex-devcontainer/actions)
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 
 Ready-to-use LaTeX environment for VS Code Dev Containers.
 
