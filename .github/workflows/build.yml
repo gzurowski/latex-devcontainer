@@ -17,7 +17,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        scheme: [basic, full]
+        scheme: [basic, medium, full]
 
     steps:
       - name: Checkout repository
