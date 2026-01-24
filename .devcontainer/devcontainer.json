@@ -1,0 +1,17 @@
+{
+  "name": "LaTeX DevContainer",
+  "image": "gzurowski/latex-devcontainer:latest",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "James-Yu.latex-workshop"
+      ],
+      "settings": {
+        "editor.formatOnSave": true,
+        "latex-workshop.latex.autoBuild.run": "onSave",
+        "latex-workshop.linting.chktex.enabled": true,
+        "latex-workshop.latexindent.path": "latexindent"
+      }
+    }
+  }
+}
