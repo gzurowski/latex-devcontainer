@@ -4,6 +4,8 @@
 [![Build](https://img.shields.io/github/actions/workflow/status/gzurowski/latex-devcontainer/build.yml?branch=main)](https://github.com/gzurowski/latex-devcontainer/actions)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 
+![LaTeX Dev Container Logo](docs/images/logo.png)
+
 Ready-to-use LaTeX environment for Visual Studio Code Dev Containers.
 
 A complete LaTeX environment with zero configuration. No installation, no subscription, no limitations.
