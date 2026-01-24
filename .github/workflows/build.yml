@@ -63,3 +63,14 @@ jobs:
             TEXLIVE_SCHEME=${{ matrix.scheme }}
           cache-from: type=gha,scope=${{ matrix.scheme }}
           cache-to: type=gha,mode=max,scope=${{ matrix.scheme }}
+
+      - name: Update Docker Hub description
+        if: github.event_name != 'pull_request'
+        uses: peter-evans/dockerhub-description@v5
+        with:
+          username: gzurowski
+          password: ${{ secrets.DOCKERHUB_PASSWORD }}
+          repository: gzurowski/latex-devcontainer
+          readme-filepath: ./README.md
+          short-description: ${{ github.event.repository.description }}
+          enable-url-completion: true
