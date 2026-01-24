@@ -22,10 +22,6 @@ A complete LaTeX environment with zero configuration. No installation, no subscr
 - **Formatting** with [latexindent](https://github.com/cmhughes/latexindent.pl) for consistent style of save.
 - **Multi-architecture** images with support for AMD64 and ARM64 (Apple Silicon).
 
-## Issues
-
-If you encounter any problems or have suggestions, please [open an issue](https://github.com/gzurowski/latex-devcontainer/issues).
-
 ## Quick Start
 
 ### Option 1: Visual Studio Dev Container
@@ -127,6 +123,10 @@ Full scheme:
 ```sh
 docker build --build-arg TEXLIVE_SCHEME=scheme-full -t latex-devcontainer:full .
 ```
+
+## Issues
+
+If you encounter any problems or have suggestions, please [open an issue](https://github.com/gzurowski/latex-devcontainer/issues).
 
 ## License
 
