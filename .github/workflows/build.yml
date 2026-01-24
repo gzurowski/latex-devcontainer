@@ -64,8 +64,15 @@ jobs:
           cache-from: type=gha,scope=${{ matrix.scheme }}
           cache-to: type=gha,mode=max,scope=${{ matrix.scheme }}
 
+  description:
+    needs: build
+    runs-on: ubuntu-latest
+    if: github.event_name != 'pull_request'
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v6
+
       - name: Update Docker Hub description
-        if: github.event_name != 'pull_request'
         uses: peter-evans/dockerhub-description@v5
         with:
           username: gzurowski
