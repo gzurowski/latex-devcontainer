@@ -23,3 +23,40 @@ A complete LaTeX environment with zero configuration. No installation, no subscr
 ## Issues
 
 If you encounter any problems or have suggestions, please [open an issue](https://github.com/gzurowski/latex-devcontainer/issues).
+
+## Quick Start
+
+### Option 1: Visual Studio Dev Container
+
+You must have Docker and Visual Studio Code with the [Dev Containers extension](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers) installed.
+See the Visual Studio Code's [Dev Containers documentation](https://code.visualstudio.com/docs/devcontainers/containers#_installation) for setup details.
+
+Add the following `.devcontainer/devcontainer.json` file to your project:
+
+```json
+{
+  "name": "LaTeX",
+  "image": "gzurowski/latex-devcontainer:full",
+  "customizations": {
+    "vscode": {
+      "extensions": ["James-Yu.latex-workshop"],
+      "settings": {
+        "editor.formatOnSave": true,
+        "latex-workshop.latex.autoBuild.run": "onSave",
+        "latex-workshop.linting.chktex.enabled": true
+      }
+    }
+  }
+}
+```
+
+Target the desired scheme using the `image` tag (`basic`, `medium` or `full`).
+
+Open the folder in VSCode and select **Dev Containers: Reopen in Container**.
+
+### Option 2: GitHub Codespaces
+
+Click the button below to launch a fully configured LaTeX environment in your browser:
+
+[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/gzurowski/latex-devcontainer)
+
