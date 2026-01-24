@@ -99,3 +99,15 @@ The following container images are available:
 | `full`   | [Full scheme](https://svn.tug.org:8369/texlive/trunk/Master/tlpkg/tlpsrc/scheme-full.tlpsrc?view=markup) with everything                      | ~2.4 GB           |
 
 If you install a scheme smaller than `full`, you can still add any missing packages later with [`tlmgr`](#additional-packages).
+
+## Included Tools
+
+The following tools are included with every image:
+
+| Tool                                                           | Description                           |
+| -------------------------------------------------------------- | ------------------------------------- |
+| [`biber`](https://biblatex-biber.sourceforge.net/)             | Bibliography processing for BibLaTex. |
+| [`chktex`](https://www.nongnu.org/chktex/)                     | Code linter.                          |
+| [`latexindent`](https://github.com/cmhughes/latexindent.pl)    | Code formatter.                       |
+| [`latexmk`](https://www.cantab.net/users/johncollins/latexmk/) | Build tool.                           |
+| [`tlmgr`](https://www.tug.org/texlive/tlmgr.html)              | Package manager                       |
