@@ -111,3 +111,23 @@ The following tools are included with every image:
 | [`latexindent`](https://github.com/cmhughes/latexindent.pl)    | Code formatter.                       |
 | [`latexmk`](https://www.cantab.net/users/johncollins/latexmk/) | Build tool.                           |
 | [`tlmgr`](https://www.tug.org/texlive/tlmgr.html)              | Package manager                       |
+
+## Building from Source
+
+Clone the [repository](https://github.com/gzurowski/latex-devcontainer) and build with Docking using the following commands.
+
+Basic scheme (default):
+
+```sh
+docker build -t latex-devcontainer .
+```
+
+Full scheme:
+
+```sh
+docker build --build-arg TEXLIVE_SCHEME=scheme-full -t latex-devcontainer:full .
+```
+
+## License
+
+This project is licensed under the [MIT License](LICENSE).
