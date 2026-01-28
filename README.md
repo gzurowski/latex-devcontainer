@@ -44,6 +44,7 @@ Or, you can manually add the following `.devcontainer/devcontainer.json` file to
       "extensions": ["James-Yu.latex-workshop"],
       "settings": {
         "editor.formatOnSave": true,
+        "latex-workshop.formatting.latex": "latexindent",
         "latex-workshop.latex.autoBuild.run": "onSave",
         "latex-workshop.linting.chktex.enabled": true
       }
