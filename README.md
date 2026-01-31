@@ -31,7 +31,9 @@ A complete LaTeX environment with zero configuration. No installation, no subscr
 You must have Docker and Visual Studio Code with the [Dev Containers extension](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers) installed.
 See the Visual Studio Code's [Dev Containers documentation](https://code.visualstudio.com/docs/devcontainers/containers#_installation) for setup details.
 
-You can simply create a new LaTeX project repository with this template: [![Create LaTeX Project](https://img.shields.io/badge/Create_LaTeX_Project-238636?style=for-the-badge&logo=github)](https://github.com/gzurowski/latex-devcontainer-template/generate)
+You can simply create a new LaTeX project repository with this template:
+
+[![Create LaTeX Project](https://img.shields.io/badge/Create_LaTeX_Project-238636?style=for-the-badge&logo=github)](https://github.com/gzurowski/latex-devcontainer-template/generate)
 
 Or, you can manually add the following `.devcontainer/devcontainer.json` file to your project:
 
