@@ -70,8 +70,8 @@ jobs:
           labels: ${{ steps.meta.outputs.labels }}
           build-args: |
             TEXLIVE_SCHEME=${{ matrix.scheme }}
-          cache-from: type=gha,scope=${{ matrix.scheme }}
-          cache-to: type=gha,mode=max,scope=${{ matrix.scheme }}
+          cache-from: type=gha,scope=${{ matrix.scheme }}-${{ steps.texlive.outputs.year }}
+          cache-to: type=gha,mode=max,scope=${{ matrix.scheme }}-${{ steps.texlive.outputs.year }}
 
   description:
     needs: build
