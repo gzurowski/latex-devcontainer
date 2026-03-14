@@ -14,7 +14,7 @@ A complete LaTeX environment with zero configuration. No installation, no subscr
 
 ## Features
 
-- Built with the **[TeX Live 2025](https://www.tug.org/texlive/)** distribution.
+- Built with the **[TeX Live 2026](https://www.tug.org/texlive/)** distribution.
 - Images with different **[Tex Live schemes](https://www.tug.org/texlive/doc/texlive-en/texlive-en.html#x1-240003.2.2)**:
   - [`gzurowski/latex-devcontainer:basic`](https://hub.docker.com/layers/gzurowski/latex-devcontainer/basic/) for a basic setup.
   - [`gzurowski/latex-devcontainer:medium`](https://hub.docker.com/layers/gzurowski/latex-devcontainer/medium/) with more packages.
