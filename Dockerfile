@@ -3,13 +3,15 @@ FROM mcr.microsoft.com/devcontainers/base:${VARIANT}
 
 ARG USERNAME=vscode
 ARG TEXLIVE_SCHEME="basic"
+ARG TEXLIVE_YEAR="2026"
+ARG TEXLIVE_MIRROR="https://ftp.math.utah.edu/pub/tex/historic/systems/texlive"
 RUN apt-get update && \
     DEBIAN_FRONTEND=noninteractive apt-get -y install --no-install-recommends \
     perl wget \
     && apt-get clean -y && rm -rf /var/lib/apt/lists/* \
     && mkdir -p /tmp/texlive \
     && cd /tmp/texlive \
-    && wget -q https://mirror.ctan.org/systems/texlive/tlnet/install-tl-unx.tar.gz \
+    && wget -q ${TEXLIVE_MIRROR}/${TEXLIVE_YEAR}/install-tl-unx.tar.gz \
     && tar -xzf install-tl-unx.tar.gz --strip-components=1 \
     && export TEXLIVE_INSTALL_NO_CONTEXT_CACHE=1 \
     && export TEXLIVE_INSTALL_NO_WELCOME=1 \
