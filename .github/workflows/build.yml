@@ -37,6 +37,13 @@ jobs:
           username: gzurowski
           password: ${{ secrets.DOCKERHUB_PASSWORD }}
 
+      - name: Get current TeX Live year
+        id: texlive
+        run: |
+          YEAR=$(curl -sL https://mirror.ctan.org/systems/texlive/tlnet/tlpkg/texlive.tlpdb \
+            | grep '^depend release/' | sed 's/depend release\///')
+          echo "year=$YEAR" >> $GITHUB_OUTPUT
+
       - name: Extract Docker metadata
         id: meta
         uses: docker/metadata-action@v5
@@ -47,6 +54,8 @@ jobs:
           tags: |
             type=semver,pattern={{version}}
             type=semver,pattern={{major}}.{{minor}}
+            type=semver,pattern=${{ steps.texlive.outputs.year }}-{{version}}
+            type=raw,value=${{ steps.texlive.outputs.year }},enable={{is_default_branch}}
             type=raw,value=latest,enable={{is_default_branch}}
             type=raw,value=latest,enable=${{ github.ref == 'refs/heads/main' && matrix.scheme == 'full' }},suffix=
             type=raw,value=${{ matrix.scheme }},enable={{is_default_branch}},suffix=
