@@ -12,6 +12,8 @@ Ready-to-use LaTeX environment for Visual Studio Code Dev Containers.
 
 A complete LaTeX environment with zero configuration. No installation, no subscription, no limitations.
 
+Ready-to-use images available on [Docker Hub](https://hub.docker.com/r/gzurowski/latex-devcontainer).
+
 ## Features
 
 - Built with the **[TeX Live 2026](https://www.tug.org/texlive/)** distribution.
