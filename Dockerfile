@@ -4,7 +4,7 @@ FROM mcr.microsoft.com/devcontainers/base:${VARIANT}
 ARG USERNAME=vscode
 ARG TEXLIVE_SCHEME="basic"
 ARG TEXLIVE_YEAR="2026"
-ARG TEXLIVE_MIRROR="https://ftp.math.utah.edu/pub/tex/historic/systems/texlive"
+ARG TEXLIVE_MIRROR="https://texlive.info/historic/systems/texlive"
 RUN apt-get update && \
     DEBIAN_FRONTEND=noninteractive apt-get -y install --no-install-recommends \
     perl wget \
