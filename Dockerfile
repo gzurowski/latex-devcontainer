@@ -6,7 +6,8 @@ ARG TEXLIVE_SCHEME="basic"
 ARG TEXLIVE_YEAR="2026"
 ARG TEXLIVE_MIRROR="https://texlive.info/historic/systems/texlive"
 RUN apt-get update && \
-    DEBIAN_FRONTEND=noninteractive apt-get -y install --no-install-recommends \
+    DEBIAN_FRONTEND=noninteractive apt-get -y upgrade \
+    && DEBIAN_FRONTEND=noninteractive apt-get -y install --no-install-recommends \
     perl wget \
     && apt-get clean -y && rm -rf /var/lib/apt/lists/* \
     && mkdir -p /tmp/texlive \
